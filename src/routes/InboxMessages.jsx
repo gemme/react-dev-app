@@ -7,58 +7,45 @@ import {
     Card,
     Image,
   } from 'semantic-ui-react';
+  import { ApprovalCard } from '../components/ApprovalCard';
+  import {CommentRow} from '../components/CommentRow';
+  import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const InboxMessages = () => {
+  const [posts,setPosts] = useState([])
+
+    useEffect(() =>{
+      fetch("https://jsonplaceholder.typicode.com/posts",{method: 'GET',headers: {
+        'Content-Type': 'application/json'
+      }})
+      .then(
+        async (response) => {
+          const data = await response.json();
+          setPosts(data);
+        }
+      )
+
+    },[])
+
     return (
         <>
-        <Card>
-      <CardContent>
-        <Image
-          floated='right'
-          size='mini'
-          src='/images/avatar/large/steve.jpg'
-        />
-        <CardHeader>Steve Sanders</CardHeader>
-        <CardMeta>Friends of Elliot</CardMeta>
-        <CardDescription>
-          Steve wants to add you to the group <strong>best friends</strong>
-        </CardDescription>
-      </CardContent>
-      <CardContent extra>
-        <div className='ui two buttons'>
-          <Button basic color='green'>
-            Approve
-          </Button>
-          <Button basic color='red'>
-            Decline
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-    <Card>
-    <CardContent>
-      <Image
-        floated='right'
-        size='mini'
-        src='/images/avatar/large/steve.jpg'
-      />
-      <CardHeader>Steve Sanders</CardHeader>
-      <CardMeta>Friends of Elliot</CardMeta>
-      <CardDescription>
-        Steve wants to add you to the group <strong>best friends</strong>
-      </CardDescription>
-    </CardContent>
-    <CardContent extra>
-      <div className='ui two buttons'>
-        <Button basic color='green'>
-          Approve
-        </Button>
-        <Button basic color='red'>
-          Decline
-        </Button>
-      </div>
-    </CardContent>
-  </Card>
+        {posts.map((post) => {
+          return (
+          <ApprovalCard>
+          <CommentRow name={post.userId} meta={post.tittle} description={post.body} />
+           </ApprovalCard>)
+        })
+        }
+       {/* <ApprovalCard>
+      <CommentRow name={"Carlos Estrada"} meta={"06/03/2024"} description={"Descripcion muy larga de cosas"} liftin={(argumento) =>{console.log(argumento)}}/>
+       </ApprovalCard>
+       <ApprovalCard>
+      <CommentRow name={"Fernando Bacquerie"} meta={"06/03/2024"} description={"Descripcion muy larga de cosas"}/>
+       </ApprovalCard>
+       <ApprovalCard>
+      <CommentRow name={"Juan Manuel"} meta={"06/03/2024"} description={"Descripcion muy larga de cosas"}/>
+       </ApprovalCard> */}
   </>
     )
 }
