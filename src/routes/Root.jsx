@@ -45,6 +45,9 @@ export default function Root() {
             <li>
               <Link to={`flicker/`}>Flicker</Link>
             </li>
+            <li>
+              <Link to={`components/`}>Components</Link>
+            </li>
           </ul>
         </nav>
         </div>

@@ -9,6 +9,7 @@ import { DigitalClock } from './routes/DigitalClock';
 import { Calculator } from './routes/Calculator';
 import { Flicker } from './routes/Flicker';
 import { Home } from './routes/Home';
+import { LegacyComponent } from './examples/classcomponents/LegacyComponent';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "flicker/",
         element: <Flicker />,
+      },
+      {
+        path: "components/",
+        element: <LegacyComponent />,
       }
     ],
   }
