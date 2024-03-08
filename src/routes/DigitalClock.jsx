@@ -1,8 +1,8 @@
 export const DigitalClock = () => {
-    return (
-        <div>
-            <h1>Digital Clock</h1>
-            <h2>{new Date().toLocaleTimeString()}</h2>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Digital Clock</h1>
+      <h2>{new Date().toLocaleTimeString()}</h2>
+    </div>
+  );
 };

@@ -1,16 +1,16 @@
-import React from 'react';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 // componentes con estado
 // Stateful components
 // Smart components
 
 class ClassCounter extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
     };
   }
 
@@ -18,72 +18,67 @@ class ClassCounter extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({
-        count: this.state.count + 1
+        count: this.state.count + 1,
       });
-    }, 1000)
+    }, 1000);
   }
 
-  render(){
-    return (
-      <div>{this.state.count}</div>
-    );
+  render() {
+    return <div>{this.state.count}</div>;
   }
 }
-
 
 // hooks
 
 const FunctionalCounter = () => {
   const [count, setCount] = useState(0);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
-
-  const increment  = () => {
-    console.log('clicked !');
+  const increment = () => {
+    console.log("clicked !");
     setCount(count + 1);
-    setName('action: increase');
-  }
+    setName("action: increase");
+  };
 
   const decrement = () => {
-    console.log('clicked !');
+    console.log("clicked !");
     setCount(count - 1);
-    setName('action: decrease');
-  }
+    setName("action: decrease");
+  };
 
   return (
     <>
       <div>{count}</div>
-      <div>      
+      <div>
         <button onClick={increment}>Increase +</button>
         <button onClick={decrement}>Decrease -</button>
       </div>
       <div>{name}</div>
-    </>    
+    </>
   );
 };
 
-
-// componente de presentacion 
+// componente de presentacion
 // Stateless components
 // Dumb Components
 
 export const MyComponent = (props) => {
   return (
     <div>
-      <p>{'My name is ' + props.name}</p>
-      <p>{'Lastname ' + props.lastname}</p>
+      <p>{"My name is " + props.name}</p>
+      <p>{"Lastname " + props.lastname}</p>
     </div>
   );
 };
 
 MyComponent.propTypes = {
   name: PropTypes.string.isRequired,
-  lastname: PropTypes.string.isRequired
+  lastname: PropTypes.string.isRequired,
 };
 
 MyComponent.defaultProps = {
-  name: 'Ernesto',
-  lastname: 'Escobar'
+  name: "Ernesto",
+  lastname: "Escobar",
 };
 
 export const LegacyComponent = () => {
@@ -94,8 +89,7 @@ export const LegacyComponent = () => {
       <h1>Functional Component: Counter</h1>
       <FunctionalCounter />
       <h1>Dumb / Presentational Component</h1>
-      <MyComponent name='Ernesto' lastname='Escobar'/>
+      <MyComponent name="Ernesto" lastname="Escobar" />
     </div>
   );
-}
-
+};

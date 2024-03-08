@@ -1,5 +1,5 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import { useEffect, useState } from "react";
 // Montaje / Mount
 // Updating
 // Unmount
@@ -17,13 +17,13 @@ function ChildComponent() {
   // ejemplos
   // para cargar algun recurso en red al inicio
   useEffect(() => {
-    console.log('mounting component');
+    console.log("mounting component");
     // componentDidMount -> Mounting
   }, []);
   // Mount / Updating
   useEffect(() => {
     setClicked(true);
-    console.log('mounting and updating component');
+    console.log("mounting and updating component");
   }, [clicked]);
   // Unmount
   useEffect(() => {
@@ -32,7 +32,7 @@ function ChildComponent() {
       // Chat cerrar un canal
       // setInterval -> id -> memory leaks
       // clearInterval(id)
-      console.log('unmounting');
+      console.log("unmounting");
     };
   });
 
@@ -51,9 +51,7 @@ function ParentComponent() {
     <>
       <div>React phases</div>
       <button onClick={() => setUnmount(true)}>Unmount</button>
-      {!unmount && (
-        <ChildComponent />
-      )}
+      {!unmount && <ChildComponent />}
     </>
   );
 }
