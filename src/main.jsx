@@ -15,6 +15,9 @@ import { Flicker } from "./routes/Flicker";
 import { Home } from "./routes/Home";
 import { Converter } from "./routes/Converter";
 import { LegacyComponent } from "./examples/classcomponents/LegacyComponent";
+import store from "./redux/store";
+import { Provider } from "react-redux";
+import PropDrilling from "./routes/PropDrilling";
 /*
 const router = createBrowserRouter([
   {
@@ -77,12 +80,18 @@ const router = createBrowserRouter([
         path: "converter/",
         element: <Converter />,
       },
+      {
+        path: "prop-drilling/",
+        element: <PropDrilling />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 );

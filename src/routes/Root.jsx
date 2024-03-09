@@ -44,6 +44,9 @@ export default function Root() {
             <li>
               <Link to={`converter/`}>Currencies Converter</Link>
             </li>
+            <li>
+              <Link to={`prop-drilling/`}>Prop Drilling</Link>
+            </li>
           </ul>
         </nav>
       </div>
