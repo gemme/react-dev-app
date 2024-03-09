@@ -1,12 +1,3 @@
-import {
-    CardMeta,
-    CardHeader,
-    CardDescription,
-    CardContent,
-    Button,
-    Card,
-    Image,
-  } from 'semantic-ui-react';
   import { ApprovalCard } from '../components/ApprovalCard';
   import {CommentRow} from '../components/CommentRow';
   import { useState } from 'react';
