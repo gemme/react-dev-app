@@ -1,85 +1,83 @@
 import {
-    CardMeta,
-    CardHeader,
-    CardDescription,
-    CardContent,
-    Card,
-    Icon,
-    Image,
-    Button,
-    Input,
-    List,
-    ListContent,
-    ListItem,
-    ListHeader,
-    ListDescription
-  } from 'semantic-ui-react'
-  import './Flicker.css';
+  CardMeta,
+  CardHeader,
+  CardDescription,
+  CardContent,
+  Card,
+  Icon,
+  Image,
+  Button,
+  Input,
+  List,
+  ListContent,
+  ListItem,
+  ListHeader,
+  ListDescription,
+} from "semantic-ui-react";
+import "./Flicker.css";
 
 export const Flicker = () => {
+  return (
+    <>
+      <Input placeholder="Search..." />
+      <Button> Search</Button>
 
-    return (
-        <>
-         <Input placeholder='Search...' /><Button> Search</Button>
-        
-        <div className='container'>
+      <div className="container">
         <div>
-        <Card>
-            <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
+          <Card>
+            <Image src="/images/avatar/large/matthew.png" wrapped ui={false} />
             <CardContent>
-            <CardHeader>Matthew</CardHeader>
-            <CardMeta>
-                <span className='date'>Joined in 2015</span>
-            </CardMeta>
-            <CardDescription>
+              <CardHeader>Matthew</CardHeader>
+              <CardMeta>
+                <span className="date">Joined in 2015</span>
+              </CardMeta>
+              <CardDescription>
                 Matthew is a musician living in Nashville.
-            </CardDescription>
+              </CardDescription>
             </CardContent>
             <CardContent extra>
-            <a>
-                <Icon name='user' />
+              <a>
+                <Icon name="user" />
                 22 Friends
-            </a>
+              </a>
             </CardContent>
-        </Card>
+          </Card>
         </div>
         <div>
-        <List>
+          <List>
             <ListItem>
-                <Image src='/images/wireframe/square-image.png' avatar />
-                <ListContent>
+              <Image src="/images/wireframe/square-image.png" avatar />
+              <ListContent>
                 <ListHeader>John Wayne</ListHeader>
                 <ListDescription>
-                This text will always have a left margin to make sure it sits
-                alongside your icon
+                  This text will always have a left margin to make sure it sits
+                  alongside your icon
                 </ListDescription>
-            </ListContent>
+              </ListContent>
             </ListItem>
             <ListItem>
-                <Image src='/images/wireframe/square-image.png' avatar />
-                <ListContent>
+              <Image src="/images/wireframe/square-image.png" avatar />
+              <ListContent>
                 <ListHeader>John Wayne</ListHeader>
                 <ListDescription>
-                This text will always have a left margin to make sure it sits
-                alongside your icon
+                  This text will always have a left margin to make sure it sits
+                  alongside your icon
                 </ListDescription>
-            </ListContent>
+              </ListContent>
             </ListItem>
             <ListItem>
-                <Image src='/images/wireframe/square-image.png' avatar />
-                <ListContent>
+              <Image src="/images/wireframe/square-image.png" avatar />
+              <ListContent>
                 <ListHeader>John Wayne</ListHeader>
                 <ListDescription>
-                This text will always have a left margin to make sure it sits
-                alongside your icon
+                  This text will always have a left margin to make sure it sits
+                  alongside your icon
                 </ListDescription>
-            </ListContent>
+              </ListContent>
             </ListItem>
-        </List>
-            
+          </List>
         </div>
-        </div>
-        </>
-    );
+      </div>
+    </>
+  );
 };
-

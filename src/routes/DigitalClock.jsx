@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const DigitalClock = () => {
+<<<<<<< HEAD
   const [hora, setHora] = useState(new Date().toLocaleTimeString()); //montaje
 
   // useEffect(()=>{
@@ -33,6 +34,12 @@ export const DigitalClock = () => {
     <div>
       <h1>Digital Clock</h1>
       <h2>{hora}</h2>
+=======
+  return (
+    <div>
+      <h1>Digital Clock</h1>
+      <h2>{new Date().toLocaleTimeString()}</h2>
+>>>>>>> 52297cb15da7ccb3919795d53476128ebcfad91e
     </div>
   );
 };
