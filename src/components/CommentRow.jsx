@@ -1,14 +1,16 @@
 import {
-    CardMeta,
-    CardHeader,
-    CardDescription,
-    Image,
-  } from 'semantic-ui-react'
+  CardMeta,
+  CardHeader,
+  CardDescription,
+  Image,
+} from "semantic-ui-react";
+import PropTypes from "prop-types";
 
+// Typescript -> ES6
 
-
-export const CommentRow = () => {
-
+export const CommentRow = (props) => {
+    if (props.liftin)
+      props.liftin("Consola")
     return (
         <>
         <Image
@@ -16,11 +18,16 @@ export const CommentRow = () => {
           size='mini'
           src='https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/170.jpg'
         />
-        <CardHeader>Steve Sanders</CardHeader>
-        <CardMeta>Friends of Elliot</CardMeta>
+        <CardHeader>{props.name}</CardHeader>
+        <CardMeta>{props.meta}</CardMeta>
         <CardDescription>
-          Steve wants to add you to the group <strong>best friends</strong>
+          {props.description}
         </CardDescription>
       </>  
     );
+};
+CommentRow.propTypes = {
+  name: PropTypes.string,
+  meta: PropTypes.string,
+  description: PropTypes.string,
 };
